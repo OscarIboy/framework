@@ -1,31 +1,31 @@
 {
-  "name": "framework",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest --forceExit"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OscarIboy/framework.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/OscarIboy/framework/issues"
-  },
-  "homepage": "https://github.com/OscarIboy/framework#readme",
-  "dependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
-    "babel-jest": "^29.4.3",
-    "jest": "^29.4.3",
-    "jest-puppeteer": "^7.0.1",
-    "puppeteer": "^19.7.1"
-  },
-  "devDependencies": {
-    "prettier": "^2.8.4"
-  }
+	"name": "framework",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest --forceExit"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/OscarIboy/framework.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/OscarIboy/framework/issues"
+	},
+	"homepage": "https://github.com/OscarIboy/framework#readme",
+	"dependencies": {
+		"@babel/core": "^7.20.12",
+		"@babel/preset-env": "^7.20.2",
+		"babel-jest": "^29.4.3",
+		"jest": "^29.4.3",
+		"jest-puppeteer": "^7.0.1",
+		"puppeteer": "^19.7.1"
+	},
+	"devDependencies": {
+		"prettier": "^2.8.4"
+	}
 }
