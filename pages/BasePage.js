@@ -39,7 +39,7 @@ export default class BasePage {
 			await page.waitForSelector(selector)
 			return await page.$$eval(selector, (el) => el.length)
 		} catch (e) {
-			throw new Error(`Error al obtener el numero de elemntos del selector ${selector}`)
+			throw new Error(`Error al obtener el numero de elementos del selector ${selector}`)
 		}
 	}
 
@@ -48,16 +48,26 @@ export default class BasePage {
 			await page.waitForSelector(selector)
 			await page.click(selector)
 		} catch (e) {
-			throw new Error(`Error al dar click en el selector ${selector}`)
+			try {
+				const element = await page.waitForXPath(selector)
+				await element.click(selector)
+			} catch (e) {
+				throw new Error(`Error al dar click en el selector ${selector}`)
+			}
 		}
 	}
 
-	async type(selector, test, opts = {}) {
+	async type(selector, text, opts = {}) {
 		try {
 			await page.waitForSelector(selector)
 			await page.type(selector, text, opts)
 		} catch (e) {
-			throw new Error(`Error al escribir en el selector ${selector}`)
+			try {
+				const element = await page.waitForXPath(selector)
+				await element.type(selector, text, opts)
+			} catch (e) {
+				throw new Error(`Error al escribir en el selector ${selector}`)
+			}
 		}
 	}
 
@@ -66,7 +76,12 @@ export default class BasePage {
 			await page.waitForSelector(selector)
 			await page.click(selector, { clickCount: 2 })
 		} catch (e) {
-			throw new Error(`Error al dar doble en el selector ${selector}`)
+			try {
+				const element = await page.waitForXPath(selector)
+				await element.click(selector, { clickCount: 2 })
+			} catch (e) {
+				throw new Error(`Error al dar doble en el selector ${selector}`)
+			}
 		}
 	}
 
