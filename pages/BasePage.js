@@ -60,6 +60,7 @@ export default class BasePage {
 	async type(selector, text, opts = {}) {
 		try {
 			await page.waitForSelector(selector)
+			await page.click(selector, { clickCount: 3})
 			await page.type(selector, text, opts)
 		} catch (e) {
 			try {
